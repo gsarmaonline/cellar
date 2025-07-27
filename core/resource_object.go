@@ -6,14 +6,15 @@ type (
 	ResourceObject struct {
 		gorm.Model
 
-		Resource
 		Host
 
 		Name string   `json:"name"`
 		Tags []string `json:"tags,omitempty"`
 
-		Env string `json:"env,omitempty"` // e.g., "production", "staging", "development"
+		Env         string       `json:"env,omitempty"`         // e.g., "production", "staging", "development"
+		Requirement *Requirement `json:"requirement,omitempty"` // Resource requirements for the object
 
+		Instances []*Instance `json:"instances,omitempty"` // List of instances associated with this resource object
 	}
 	Host struct {
 		Hostname string `json:"hostname"`

@@ -24,10 +24,16 @@ type (
 		BwIn   int `json:"bw_in,omitempty"`  // Bandwidth in Mbps for incoming traffic
 		BwOut  int `json:"bw_out,omitempty"` // Bandwidth in Mbps for outgoing traffic
 	}
-
 	Requirement struct {
 		Resource      Resource `json:"resource,omitempty"`       // Resource requirements for the instance
 		KernelVersion string   `json:"kernel_version,omitempty"` // Required kernel version
+	}
+	InstanceToResource struct {
+		gorm.Model
+
+		ResourceType string `json:"resource_type"` // e.g., "instance", "database", "service"
+		ResourceID   uint   `json:"resource_id"`   // ID of the resource in the database
+		InstanceID   uint   `json:"instance_id"`   // ID of the instance in the database
 	}
 )
 
