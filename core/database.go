@@ -11,8 +11,7 @@ type (
 	DatabaseTypeT string
 
 	Database struct {
-		BaseObject
-		Host
+		ResourceObject
 
 		DatabaseType DatabaseTypeT `json:"database_type"` // e.g., "mysql", "postgresql", "mongodb"
 		Username     string        `json:"username"`
@@ -22,7 +21,7 @@ type (
 
 func NewDatabase() (*Database, error) {
 	return &Database{
-		BaseObject: BaseObject{
+		ResourceObject: ResourceObject{
 			Name: "database",
 		},
 	}, nil

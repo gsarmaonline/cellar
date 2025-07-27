@@ -2,6 +2,11 @@ package core
 
 type (
 	Cache struct {
-		BaseObject
+		ResourceObject
 	}
 )
+
+func (c *Cache) Deploy() error {
+	// Implement deployment logic here
+	return nil
+}

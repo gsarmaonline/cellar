@@ -2,6 +2,11 @@ package core
 
 type (
 	Workerpool struct {
-		BaseObject
+		ResourceObject
 	}
 )
+
+func (wp *Workerpool) Deploy() error {
+	// Implement deployment logic here
+	return nil
+}

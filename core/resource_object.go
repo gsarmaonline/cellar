@@ -3,19 +3,17 @@ package core
 import "gorm.io/gorm"
 
 type (
-	BaseObject struct {
+	ResourceObject struct {
 		gorm.Model
 
-		ID string `json:"id"`
-
-		CreatedAt string  `json:"created_at"`
-		UpdatedAt string  `json:"updated_at"`
-		DeletedAt *string `json:"deleted_at,omitempty"`
+		Resource
+		Host
 
 		Name string   `json:"name"`
 		Tags []string `json:"tags,omitempty"`
 
 		Env string `json:"env,omitempty"` // e.g., "production", "staging", "development"
+
 	}
 	Host struct {
 		Hostname string `json:"hostname"`
