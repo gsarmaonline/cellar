@@ -1,7 +1,7 @@
 package core
 
 type (
-	Language struct {
+	Workerpool struct {
 		BaseObject
 	}
 )
